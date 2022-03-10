@@ -1,9 +1,6 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import Header from './header';
-import Nav from './nav';
-import NavItem from './navItem';
 
 export const siteTitle: string = 'VNMK';
 
