@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import CategoryPage from '../pages/posts/[category]';
 
 export const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -62,6 +63,6 @@ export const getPostData = async (id: string) => {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { date: string, title: string })
+    ...(matterResult.data as { date: string, title: string, category: string })
   }
 }

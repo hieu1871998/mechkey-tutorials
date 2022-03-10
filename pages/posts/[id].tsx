@@ -4,9 +4,10 @@ import Layout from '../../components/layout';
 import { getAllPostIds, getPostData, postsDirectory } from '../../lib/posts';
 import Date from '../../components/date';
 import { useRouter } from 'next/router';
+import id from 'date-fns/esm/locale/id/index.js';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id as string);
+  const postData = await getPostData(params?.id as string);
   return {
     props: {
       postData,
@@ -17,8 +18,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
   return {
-    paths: [],
-    fallback: false
+    paths,
+    fallback: false,
   };
 }
 
