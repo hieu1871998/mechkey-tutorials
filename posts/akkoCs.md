@@ -4,10 +4,11 @@ date: '2021-09-15'
 author: 'Hoàng Vương'
 imgSrc: 'images/switches/akko/PXL_20210512_231439741.NIGHT.jpg'
 ---
+
 Lời mở đầu
 Chào mọi người, hôm nay mình sẽ review về dòng switch mới của Akko, đó là Akko CS với 3 switch là Rose Red, Matcha Green và Ocean Blue. Với mức giá có thể gọi là khá rẻ thì chất lượng của switch Akko CS sẽ tới đâu và liệu có thể cạnh tranh với các switch budget khác như Gateron Yellow hay JWICK không? Nếu so với các switch custom cao cấp hơn thì sao? Hy vọng review này của mình sẽ giải đáp được 2 câu hỏi này.
 
-images/switches/akko/PXL_20210512_231439741.NIGHT.jpg
+![Akko CS Switches](images/switches/akko/PXL_20210512_231439741.NIGHT.jpg)
 
 Ảnh 1. Các switch Akko CS
 

@@ -36,7 +36,7 @@ const GridItem = ({
       <Link href={href}>
         <a>
           <div className='flex flex-col w-full bg-black bg-opacity-50 justify-center align-middle absolute -bottom-9 left-0 overflow-hidden hover:bottom-0 transition-all duration-500'>
-            <h4 className='px-4 w-full text-2xl text-white font-leagueSpartan font-normal tracking-wide leading-loose'>{title}</h4>
+            <h4 className='px-4 py-1 w-full text-2xl text-white text-ellipsis font-leagueSpartan font-normal tracking-wide leading-loose line-clamp-1 overflow-hidden'>{title}</h4>
             <div className='flex flex-row justify-between mx-4 border-t border-white border-opacity-50'>
               <p className='w-full text-left text-base text-white font-raleway font-normal tracking-widest leading-loose'>{author}</p>
               <p className='w-full text-right text-base text-white font-raleway font-normal tracking-widest leading-loose'><Date dateString={date} /></p>
