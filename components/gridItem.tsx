@@ -7,19 +7,21 @@ const GridItem = ({
   title, 
   author,
   date,
-  href
+  href,
+  hrefAs
 }: {
   imageSrc: string,
   title: string,
   author: string,
   date: string,
-  href: string
+  href: string,
+  hrefAs: string
 }) => {
 
   return (
     <div className='col-span-1 border border-black border-opacity-25 shadow-md relative overflow-hidden'>
       <div className='w-full aspect-w-2 aspect-h-1 relative'>
-        <Link href={href}>
+        <Link href={href} as={hrefAs}>
           <a>
             <Image
               priority
@@ -33,7 +35,7 @@ const GridItem = ({
           </a>          
         </Link>
       </div>
-      <Link href={href}>
+      <Link href={href} as={hrefAs}>
         <a>
           <div className='flex flex-col w-full bg-black bg-opacity-50 justify-center align-middle absolute -bottom-9 left-0 overflow-hidden hover:bottom-0 transition-all duration-500'>
             <h4 className='px-4 py-1 w-full text-2xl text-white text-ellipsis font-leagueSpartan font-normal tracking-wide leading-loose line-clamp-1 overflow-hidden'>{title}</h4>

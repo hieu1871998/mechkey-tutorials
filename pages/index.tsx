@@ -3,8 +3,6 @@ import Layout, { siteTitle } from '../components/layout';
 import Grid from '../components/grid';
 import GridItem from '../components/gridItem';
 import { getSortedPostsData } from '../lib/posts';
-import Date from '../components/date';
-import { useRouter } from 'next/router';
 
 export const getStaticProps = async () => {
   const allPostsData = getSortedPostsData();
@@ -42,7 +40,8 @@ const Home = ({
               title={title}
               author={author}
               date={date}
-              href={`/posts/${id}`}
+              href='/posts/[category]/[id]'
+              hrefAs={`/posts/${category}/${id}`}
             />
           ))}
         </Grid>
