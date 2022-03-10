@@ -6,20 +6,20 @@ import Date from '../../components/date';
 import { useRouter } from 'next/router';
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id as string)
+  const postData = await getPostData(params.id as string);
   return {
     props: {
       postData,
     }
-  }
+  };
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+  const paths = getAllPostIds();
   return {
-    paths,
+    paths: [],
     fallback: false
-  }
+  };
 }
 
 const Post = ({
@@ -35,6 +35,8 @@ const Post = ({
   }
 }) => {
   const router = useRouter();
+
+  console.log(router.query);
 
   return (
     <Layout>
