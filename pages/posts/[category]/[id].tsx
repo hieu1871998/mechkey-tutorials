@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Layout from '../../../components/layout';
+import Layout, { siteTitle } from '../../../components/layout';
 import { getAllPostIds, getPostData } from '../../../lib/posts';
 import Date from '../../../components/date';
 import { useRouter } from 'next/router';
@@ -23,6 +23,9 @@ const Post = ({
     return (
       <Layout>
         <div className='container m-auto w-full h-80 flex justify-center content-center'>
+          <Head>
+            <title>{siteTitle}</title>
+          </Head>
           <div className='w-80 h-80 text-center'>
             <span className='text-2xl text-black font-raleway'>Loading post</span>
           </div>
@@ -46,7 +49,7 @@ const Post = ({
             </div>  
           </div>        
           <div
-           className='p-4 text-justify text-lg font-raleway leading-8'
+           className='p-4 text-justify text-lg font-sans leading-8'
            dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
         </div>        

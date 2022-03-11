@@ -21,44 +21,44 @@ const Header = () => {
 
   return (
     <header className='w-full flex flex-col bg-white'>
-      <Link href='https://discord.gg/c3RHqNuSUY'>
-        <a target='_blank' className='w-full bg-black p-3'>
-          <h4 className='text-center text-xs text-white font-leagueSpartan tracking-wide'>JOIN US ON DISCORD: VIETNAM MECHANICAL KEYBOARD</h4>
-        </a>
-      </Link>
       <div className='border-b border-b-black border-opacity-30 relative py-4 pl-20 pb-4'>
         <Link href='/'>
-          <a className='text-3xl font-raleway font-bold tracking-widest select-none'><span className='text-red-500 font-black'>M</span>ECHKEY TUTORIALS</a>            
+          <a className='text-3xl p-1 font-raleway font-bold tracking-widest select-none border-2 border-black'><span className='text-red-500 font-black'>M</span>ECHKEY TUTORIALS</a>            
         </Link>          
       </div>
       {scrollY > 80 ? (
-        <div className='w-full flex justify-between px-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900 z-10 fixed shadow'>
+        <div className='w-full flex justify-between pr-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900 z-10 fixed shadow'>
+          <div className='flex flex-row'>
+            <Link href='/'>
+              <a className='w-20 py-2 text-3xl text-center font-raleway font-bold tracking-widest select-none'><span className='text-red-500 font-black'>M</span>T</a>            
+            </Link>
+            <Nav>
+              <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
+              <NavItem link='/posts/[categoryIndex]' linkAs='/'>KEYBOARDS 101</NavItem>
+              <NavItem link='/stabmods' linkAs='/'>STAB MODS</NavItem>
+              <NavItem link='/switches' linkAs='/'>SWITCHES</NavItem>
+              <NavItem link='/keycaps' linkAs='/'>KEYCAPS</NavItem>
+              <NavItem link='/build' linkAs='/'>BUILD</NavItem>
+              <NavItem link='/firmware' linkAs='/'>FIRMWARE</NavItem>
+            </Nav>
+          </div>
           <Nav>
-            <NavItem link='/' isFirst>HOME</NavItem>
-            <NavItem link='/keebs'>KEYBOARDS 101</NavItem>
-            <NavItem link='/stabmods'>STAB MODS</NavItem>
-            <NavItem link='/switches'>SWITCHES</NavItem>
-            <NavItem link='/keycaps'>KEYCAPS</NavItem>
-            <NavItem link='/build'>BUILD</NavItem>
-            <NavItem link='/firmware'>FIRMWARE</NavItem>
-          </Nav>
-          <Nav>
-            <NavItem link='/' isFirst>SEARCH</NavItem>
+            <NavItem link='/' linkAs='/' isFirst>SEARCH</NavItem>
           </Nav>
         </div>
       ) : (
         <div className='w-full flex justify-between px-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900'>
           <Nav>
-            <NavItem link='/' isFirst>HOME</NavItem>
-            <NavItem link='/'>KEYBOARDS 101</NavItem>
-            <NavItem link='/'>STAB MODS</NavItem>
-            <NavItem link='/'>SWITCHES</NavItem>
-            <NavItem link='/'>KEYCAPS</NavItem>
-            <NavItem link='/'>BUILD</NavItem>
-            <NavItem link='/'>FIRMWARE</NavItem>
+            <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
+            <NavItem link='/' linkAs='/'>KEYBOARDS 101</NavItem>
+            <NavItem link='/' linkAs='/'>STAB MODS</NavItem>
+            <NavItem link='/' linkAs='/'>SWITCHES</NavItem>
+            <NavItem link='/' linkAs='/'>KEYCAPS</NavItem>
+            <NavItem link='/' linkAs='/'>BUILD</NavItem>
+            <NavItem link='/' linkAs='/'>FIRMWARE</NavItem>
           </Nav>
           <Nav>
-            <NavItem link='/' isFirst>SEARCH</NavItem>
+            <NavItem link='/' linkAs='/' isFirst>SEARCH</NavItem>
           </Nav>
         </div>
       )}

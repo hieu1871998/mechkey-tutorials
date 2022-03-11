@@ -33,7 +33,7 @@ const Home = ({
       </Head>
       <section className='container max-w-full px-20 py-8'>
         <Grid>
-          {allPostsData.map(({ category, id, imgSrc, title, author, date }) => (
+          {allPostsData.map(({ id, category, imgSrc, title, author, date }) => (
             <GridItem
               key={id}
               imageSrc={'/' + imgSrc}
@@ -42,7 +42,7 @@ const Home = ({
               date={date}
               href='/posts/[category]/[id]'
               hrefAs={`/posts/${category}/${id}`}
-            />
+            />           
           ))}
         </Grid>
       </section>

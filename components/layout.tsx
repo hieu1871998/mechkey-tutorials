@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Header from './header';
+import Link from 'next/link';
 
-export const siteTitle: string = 'VNMK';
+export const siteTitle: string = 'Mechkey Tutorials';
 
 const Layout = ({
   children
@@ -45,8 +46,12 @@ const Layout = ({
         </div>
       )}
       </main>
-      <footer className='container mx-auto my-16 px-8 py-16 border-t border-black border-opacity-30 grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2'>
-        
+      <footer className='w-full mt-8 flex flex-col bg-white'>
+        <Link href='https://discord.gg/c3RHqNuSUY'>
+          <a target='_blank' className='w-full bg-black p-3'>
+            <h4 className='text-center text-xs text-white font-leagueSpartan tracking-wide'>JOIN US ON DISCORD: VIETNAM MECHANICAL KEYBOARD</h4>
+          </a>
+        </Link>        
       </footer>
     </div>
   );

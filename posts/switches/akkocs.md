@@ -8,7 +8,7 @@ imgSrc: 'images/switches/akko/PXL_20210512_231439741.NIGHT.jpg'
 Lời mở đầu
 Chào mọi người, hôm nay mình sẽ review về dòng switch mới của Akko, đó là Akko CS với 3 switch là Rose Red, Matcha Green và Ocean Blue. Với mức giá có thể gọi là khá rẻ thì chất lượng của switch Akko CS sẽ tới đâu và liệu có thể cạnh tranh với các switch budget khác như Gateron Yellow hay JWICK không? Nếu so với các switch custom cao cấp hơn thì sao? Hy vọng review này của mình sẽ giải đáp được 2 câu hỏi này.
 
-![Akko CS Switches](images/switches/akko/PXL_20210512_231439741.NIGHT.jpg)
+![Các switch Akko CS](/images/switches/akko/PXL_20210512_231439741.NIGHT.jpg)
 
 Ảnh 1. Các switch Akko CS
 
@@ -17,24 +17,24 @@ Dòng switch Akko CS là sản phẩm ra đời từ sự hợp tác giữa hãn
 
 KTT là 1 hãng switch đã hoạt động được vài năm tuy nhiên không nhiều người biết đến. Có một số người có thể biết đến những switch cũ của hãng này với logo “Content”, những switch khá tệ tại thời điểm ra mắt khi so với các lựa chọn khác trên thị trường, hoàn toàn không có tính cạnh tranh. Tuy nhiên gần đây KTT đã cho ra mắt rất nhiều switch tốt, chủ yếu là các kèo group buy nội địa bên Trung Quốc, như là Sea Salt Lemon, Cloud Blue, Strawberry, Matcha… Đây là những switch có giá thành không cao nhưng lại có hiệu năng rất tốt. Sự thành công của những switch này đã dẫn đến sự ra đời của dòng switch Akko CS. Akko CS được làm dựa trên khuôn của Sea Salt Lemon và sử dụng các loại nhựa khác.
 
-images/switches/akko/PXL_20210512_231252711.NIGHT.jpg
+![Một số switch KTT](/images/switches/akko/PXL_20210512_231252711.NIGHT.jpg)
 
 Ảnh 2. Một số switch KTT
 
 Do đã được trải nghiệm và thấy được sự cải thiện trong chất lượng switch với mỗi kèo group buy của KTT nên mình đã rất kỳ vọng và mong đợi dòng Akko CS khi lần đầu tiên biết tin KTT sẽ là nhà sản xuất vào khoảng đầu tháng 2 năm nay.
 
-images/switches/akko/unknown.png
+![Email từ đại diện Akko về các switch mới (tháng 02/2021)](/images/switches/akko/unknown.png)
 
 Ảnh 3. Email từ đại diện Akko về các switch mới (tháng 02/2021)
 
 Đóng gói
 Packing của Akko thật sự rất là ấn tượng. Phần lớn các switch khác dù rẻ hơi đắt thường đều chỉ được pack vào túi zip hoặc gần đây là một lọ nhựa. Akko CS được đóng gói rất đẹp vào từng hộp chứa 45 switch. Trong mỗi hộp có khay nhựa mỏng riêng với ô cho từng switch một. cách đóng gói này đảm bảo rằng 2 chân đồng của switch không bị cong do quá trình vận chuyển.
 
-images/switches/akko/MVIMG_20210418_165731(1).jpg
+![Hộp sản phẩm Akko CS](/images/switches/akko/MVIMG_20210418_165731(1).jpg)
 
 Ảnh 4. Hộp sản phẩm Akko CS
 
-images/switches/akko/PXL_20210512_232433227.NIGHT.jpg
+![Bên trong hộp Akko CS Rose Red](/images/switches/akko/PXL_20210512_232433227.NIGHT.jpg)
 
 Ảnh 5. Bên trong hộp Akko CS Rose Red
 
@@ -43,11 +43,11 @@ Mặc dù hộp khá đẹp nhưng việc đóng gói thành các pack 45 switch
 Rose Red và Matcha Green
 Do Rose Red và Matcha Green đều là linear và có nhiều điểm tương đồng, chỉ khác lực lò xo và hành trình bấm nên mình sẽ review chung.
 
-images/switches/akko/PXL_20210512_233333239.jpg
+![Akko CS Rose Red](/images/switches/akko/PXL_20210512_233333239.jpg)
 
 Ảnh 6. Akko CS Rose Red
 
-images/switches/akko/PXL_20210512_233145835.jpg
+![Akko CS Matcha Green](/images/switches/akko/PXL_20210512_233145835.jpg)
 
 Ảnh 7. Akko CS Matcha Green
 
@@ -78,7 +78,7 @@ Do thiết kế top housing dạng winglatch giống các switch Kailh nên Akko
 Stem thì có rung lắc chiều ngang (W/E) và hơi lắc một ít chiều dọc (N/S). Tổng quan thì ít lắc hơn so với các switch Gateron nhưng không chắc chắn bằng các switch mới của Durock/JWK như Alpaca v2 và JWICK. Phần này không tệ, nhưng cũng không có gì nổi trội.
 
 Ocean Blue
-images/switches/akko/PXL_20210512_233000721.NIGHT.jpg
+![Akko CS Ocean Blue](/images/switches/akko/PXL_20210512_233000721.NIGHT.jpg)
 
 Ảnh 8. Akko CS Ocean Blue
 
@@ -92,8 +92,7 @@ Ocean Blue có cảm giác bấm giống như là con lai giữa T1 và Holy Pan
 
 Switch này theo mình là lựa chọn hoàn hảo cho những ai muốn trải nghiệm kiểu switch có độ tactile lớn mà không phải chi trả cho những switch đắt tiền.
 
-images/switches/akko/Akko-KTT-CS-Ocean-Blue.png
-
+![Đồ thị lực Ocean Blue (đo bởi Pylon#8158)](/images/switches/akko/Akko-KTT-CS-Ocean-Blue.png)
 Ảnh 9. Đồ thị lực Ocean Blue (đo bởi Pylon#8158)
 
 Âm thanh
