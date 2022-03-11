@@ -132,7 +132,7 @@ export const getAllPostIds = () => {
   const buildFileNames = fs.readdirSync(buildDirectory);
   const firmwareFileNames = fs.readdirSync(firmwareDirectory);
 
-  let categoryNames = [];
+  let categoryNames:string[] = [];
 
   keebsFileNames.forEach(keebsFileName => {
     categoryNames.push(keebsDirectory);

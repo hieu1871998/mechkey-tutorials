@@ -1,8 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
-import Date from '../../components/date';
+import Layout from '../../../components/layout';
+import { getAllPostIds, getPostData } from '../../../lib/posts';
+import Date from '../../../components/date';
+import { useRouter } from 'next/router';
 
 const Post = ({
   postData
@@ -16,12 +17,26 @@ const Post = ({
     contentHtml: string
   }
 }) => {
+  const router = useRouter()
+  
+  if (router.isFallback) {
+    return (
+      <Layout>
+        <div className='container m-auto w-full h-80 flex justify-center content-center'>
+          <div className='w-80 h-80 text-center'>
+            <span className='text-2xl text-black font-raleway'>Loading post</span>
+          </div>
+        </div>
+      </Layout>
+    )
+  }
+
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <div className='container pt-4 px-40'>
+      <div className='container m-auto pt-4 2xl:px-40 xl:px-40 lg: px-8'>
         <div className='container p-4 border border-black border-opacity-10 shadow-md'>
           <div className='m-4 pb-4 border-b border-black border-opacity-25'>
             <h1 className='text-left text-4xl font-raleway font-bold'>{postData.title}</h1>
@@ -31,7 +46,7 @@ const Post = ({
             </div>  
           </div>        
           <div
-           className='p-4 text-justify text-lg font-raleway'
+           className='p-4 text-justify text-lg font-raleway leading-8'
            dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
           />
         </div>        
@@ -44,7 +59,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 

@@ -4,7 +4,11 @@ import Header from './header';
 
 export const siteTitle: string = 'VNMK';
 
-const Layout = ({children}: {children: React.ReactNode}) => {
+const Layout = ({
+  children
+}: {
+  children: React.ReactNode
+}) => {
   const [ scrollY, setScrollY] = useState(0);
 
   useEffect(() => {

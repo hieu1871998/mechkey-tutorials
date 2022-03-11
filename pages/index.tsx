@@ -40,8 +40,8 @@ const Home = ({
               title={title}
               author={author}
               date={date}
-              href='/[category]/[id]'
-              hrefAs={`${category}/${id}`}
+              href='/posts/[category]/[id]'
+              hrefAs={`/posts/${category}/${id}`}
             />
           ))}
         </Grid>
