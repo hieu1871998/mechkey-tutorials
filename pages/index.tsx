@@ -18,12 +18,12 @@ const Home = ({
   allPostsData
 }: {
   allPostsData: {
+    category: string,
     id: string,
     imgSrc: string,
     title: string,
     author: string,
-    date: string
-    category: string
+    date: string    
   }[]
 }) => {
   return (
@@ -33,15 +33,15 @@ const Home = ({
       </Head>
       <section className='container max-w-full px-20 py-8'>
         <Grid>
-          {allPostsData.map(({ id, imgSrc, title, author, date, category }) => (
+          {allPostsData.map(({ category, id, imgSrc, title, author, date }) => (
             <GridItem
               key={id}
               imageSrc={'/' + imgSrc}
               title={title}
               author={author}
               date={date}
-              href='/posts/[category]/[id]'
-              hrefAs={`/posts/${category}/${id}`}
+              href='/[category]/[id]'
+              hrefAs={`${category}/${id}`}
             />
           ))}
         </Grid>

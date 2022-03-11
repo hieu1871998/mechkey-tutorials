@@ -3,7 +3,6 @@ title: 'Layout huyền thoại Alice'
 date: '2021-11-15'
 author: 'iamtienng'
 imgSrc: 'images/alice/tgr_alice.png'
-category: 'keebs'
 ---
 
 Nói đến những layout dị cho bàn phím, ta không thể không kể đến layout Alice - một layout làm mưa làm gió từ bộ não thức thời Yuk Tsi.

@@ -35,12 +35,12 @@ const Header = () => {
         <div className='w-full flex justify-between px-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900 z-10 fixed shadow'>
           <Nav>
             <NavItem link='/' isFirst>HOME</NavItem>
-            <NavItem link='/posts/keebs'>KEYBOARDS 101</NavItem>
-            <NavItem link='/posts/stabmods'>STAB MODS</NavItem>
-            <NavItem link='/posts/switches'>SWITCHES</NavItem>
-            <NavItem link='/posts/keycaps'>KEYCAPS</NavItem>
-            <NavItem link='/posts/build'>BUILD</NavItem>
-            <NavItem link='/posts/firmware'>FIRMWARE</NavItem>
+            <NavItem link='/keebs'>KEYBOARDS 101</NavItem>
+            <NavItem link='/stabmods'>STAB MODS</NavItem>
+            <NavItem link='/switches'>SWITCHES</NavItem>
+            <NavItem link='/keycaps'>KEYCAPS</NavItem>
+            <NavItem link='/build'>BUILD</NavItem>
+            <NavItem link='/firmware'>FIRMWARE</NavItem>
           </Nav>
           <Nav>
             <NavItem link='/' isFirst>SEARCH</NavItem>

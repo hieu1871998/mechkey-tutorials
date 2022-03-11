@@ -3,7 +3,6 @@ title: 'Chia sẻ kinh nghiệm lựa chọn trạm hàn, tay hàn'
 date: '2021-09-15'
 author: 'Nguyễn Viết Trường'
 imgSrc: 'images/build/C5nwrgi.png'
-category: 'build'
 ---
 Xin chào các anh em chơi phím cơ gần xa, hôm nay mình xin được chia sẻ một vài kinh nghiệm lựa chọn tay hàn hoặc trạm hàn, một trong những vật dụng có thể nói là khá quan trọng cho anh em nào muốn build một con phím “endgame”, hoặc là những người rảnh rỗi muốn vọc vạch sâu hơn chiếc bàn phím của mình.
 

@@ -186,6 +186,6 @@ export const getPostData = async (category: string, id: string) => {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as { title: string, date: string, author: string, imgSrg: string, category: string })
+    ...(matterResult.data as { title: string, date: string, author: string, imgSrg: string})
   }
 }
