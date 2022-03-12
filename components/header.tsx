@@ -1,9 +1,17 @@
+import { GetStaticPaths } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Nav from './nav';
 import NavItem from './navItem';
 
 const Header = () => {
+  const router = useRouter();
+  useEffect(() => {
+    if(!router.isReady) return;
+  },[router.isReady]);
+  const category = router.query;
+
   const [ scrollY, setScrollY ] = useState(0);
 
   useEffect(() => {
@@ -17,7 +25,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  })
+  });
 
   return (
     <header className='w-full flex flex-col bg-white'>
@@ -34,8 +42,8 @@ const Header = () => {
             </Link>
             <Nav>
               <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
-              <NavItem link='/posts/[categoryIndex]' linkAs='/'>KEYBOARDS 101</NavItem>
-              <NavItem link='/stabmods' linkAs='/'>STAB MODS</NavItem>
+              <NavItem link='/posts/[category]' linkAs={`/posts/${category}`}>KEYBOARDS 101</NavItem>
+              <NavItem link='/posts/[category]' linkAs={`/posts/${category}`}>STAB MODS</NavItem>
               <NavItem link='/switches' linkAs='/'>SWITCHES</NavItem>
               <NavItem link='/keycaps' linkAs='/'>KEYCAPS</NavItem>
               <NavItem link='/build' linkAs='/'>BUILD</NavItem>
@@ -50,7 +58,7 @@ const Header = () => {
         <div className='w-full flex justify-between px-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900'>
           <Nav>
             <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
-            <NavItem link='/' linkAs='/'>KEYBOARDS 101</NavItem>
+            <NavItem link='/posts/[category]' linkAs={`/posts/${category}`}>KEYBOARDS 101</NavItem>
             <NavItem link='/' linkAs='/'>STAB MODS</NavItem>
             <NavItem link='/' linkAs='/'>SWITCHES</NavItem>
             <NavItem link='/' linkAs='/'>KEYCAPS</NavItem>
