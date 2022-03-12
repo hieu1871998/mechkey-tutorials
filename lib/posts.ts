@@ -189,9 +189,3 @@ export const getPostData = async (category: string, id: string) => {
     ...(matterResult.data as { title: string, date: string, author: string, imgSrg: string, videoId: string})
   }
 }
-
-export const getCachedPostData = async () => {
-  const posts = getSortedPostsData();
-
-  return `export const cachedPosts = ${JSON.stringify(posts)}`;
-}
