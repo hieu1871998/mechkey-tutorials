@@ -27,7 +27,7 @@ const Header = () => {
         </Link>          
       </div>
       {scrollY > 80 ? (
-        <div className='w-full flex justify-between pr-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900 z-10 fixed shadow'>
+        <div className='w-full flex justify-between pr-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900 z-10 fixed shadow md:invisible'>
           <div className='flex flex-row'>
             <Link href='/'>
               <a className='w-20 py-2 text-3xl text-center font-raleway font-bold tracking-widest select-none'><span className='text-red-500 font-black'>M</span>T</a>            
@@ -57,10 +57,11 @@ const Header = () => {
             <NavItem link='/posts/[category]' linkAs='/posts/keycaps'>KEYCAPS</NavItem>
             <NavItem link='/posts/[category]' linkAs='/posts/build'>BUILD</NavItem>
             <NavItem link='/posts/[category]' linkAs='/posts/firmware'>FIRMWARE</NavItem>
+            <NavItem link='/keyboardTest' linkAs='/keyboardtest'>KEYBOARD TEST</NavItem>
           </Nav>
           <Nav>
-            <NavItem link='/keyboardTest' linkAs='/keyboardtest' isFirst>KEYBOARD TEST</NavItem>
-            <NavItem link='/' linkAs='/'>SEARCH</NavItem>
+            <NavItem link='/' linkAs='/' isFirst>SEARCH</NavItem>
+            {/* <input className='w-64' type='text'></input> */}
           </Nav>
         </div>
       )}

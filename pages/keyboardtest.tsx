@@ -1,20 +1,33 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Layout from '../components/layout';
 
 const KeyboardTester = () => {
-  useEffect(() => {
-    document.addEventListener('keydown', (event) => {
+
+  useEffect(() => {    
+    document.body.addEventListener('keydown', (event: KeyboardEvent) => {
       let key: string = event.key;
       let code: string = event.code;
       console.log(key);
 
-      document.getElementById(key)?.classList.add('bg-green-300');
-      document.getElementById(code)?.classList.add('bg-green-300');
+      if ((key == document.getElementById(key)?.id && event.target == document.body) || (code == document.getElementById(key)?.id && event.target == document.body) || key == 'AltLeft' || key == 'AltRight') {
+        event.preventDefault();
+      }
+
+      
+      document.getElementById(key)?.classList.add('bg-green-300', 'top-0.5');
+      document.getElementById(code)?.classList.add('bg-green-300', 'top-0.5');
+      
+    })
+    document.body.addEventListener('keyup', (event: KeyboardEvent) => {
+      let key: string = event.key;
+      let code: string = event.code;
+      document.getElementById(key)?.classList.remove('top-0.5');
+      document.getElementById(code)?.classList.remove('top-0.5');
 
       event.preventDefault();
     })
-  })
+  }, []);
 
   const keyBase = 'h-10 p-1 border border-black border-opacity-30 rounded-sm float-left mx-1 my-1 relative';
   const keyBaseWidth = ' w-10';
@@ -34,7 +47,7 @@ const KeyboardTester = () => {
       <Head>
         <title>Keyboard Tester - MECHKEY TUTORIALS</title>
       </Head>
-      <div className='container m-auto flex justify-center content-center py-32'>
+      <div id='keyboard' className='container m-auto flex justify-center content-center py-32'>
         <ul className='text-xs text-black font-leagueSpartan list-none capitalize relative p-2 border-4 border-black border-opacity-50 rounded-md'>
           <li className={keyBase + keyBaseWidth} id=''></li>
           <li className={keyBase + keyBaseWidth} id='F1'>F1</li>
@@ -49,7 +62,7 @@ const KeyboardTester = () => {
           <li className={keyBase + keyBaseWidth} id='F10'>F10</li>
           <li className={keyBase + keyBaseWidth} id='F11'>F11</li>
           <li className={keyBase + keyBaseWidth} id='F12'>F12</li>
-          <li className={keyBase + keyBaseWidth} id='Insert'>Insert</li>
+          <li className={keyBase + keyTabDelete} id='Insert'>Insert</li>
           <li className={keyBase + keyBaseWidth + keyFirst} id='Escape'>Esc</li>
           <li className={keyBase + keyBaseWidth} id='Digit1'>1</li>
           <li className={keyBase + keyBaseWidth} id='Digit2'>2</li>

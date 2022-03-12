@@ -20,7 +20,7 @@ const GridItem = ({
 
   return (
     <div className='col-span-1 border border-black border-opacity-25 shadow-md relative overflow-hidden'>
-      <div className='w-full aspect-w-2 aspect-h-1 relative'>
+      <div className='w-full aspect-w-16 aspect-h-9 relative'>
         <Link href={href} as={hrefAs}>
           <a>
             <Image

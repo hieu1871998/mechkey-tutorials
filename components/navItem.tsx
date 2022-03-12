@@ -17,7 +17,7 @@ const NavItem = ({
   return (
     <Link href={link} as={linkAs}>
         <a className={classStr}>
-          <span className='text-base font-leagueSpartan font-thin hover:border-b hover:border-b-black hover:border-opacity-30 transition-all duration-300 py-1 tracking-widest'>{children}</span>
+          <span className='text-base lg:text-sm md:text-xs font-leagueSpartan font-thin hover:border-b hover:border-b-black hover:border-opacity-30 transition-all duration-300 py-1 tracking-widest'>{children}</span>
         </a>
     </Link>
   )
