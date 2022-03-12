@@ -18,6 +18,9 @@ module.exports = {
         ebGaramond: ['EB Garamond', 'serif'],
         robotoSlab: ['Roboto Slab', 'serif'],
       },
+      spacing: {
+        18: '4.5rem' 
+      }
     },
   },
   plugins: [

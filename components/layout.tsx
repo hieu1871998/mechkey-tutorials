@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './header';
 import Link from 'next/link';
 
-export const siteTitle: string = 'Mechkey Tutorials';
+export const siteTitle: string = 'MECHKEY TUTORIALS';
 
 const Layout = ({
   children

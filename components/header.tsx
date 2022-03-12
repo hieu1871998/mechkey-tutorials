@@ -1,17 +1,9 @@
-import { GetStaticPaths } from 'next';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Nav from './nav';
 import NavItem from './navItem';
 
 const Header = () => {
-  const router = useRouter();
-  useEffect(() => {
-    if(!router.isReady) return;
-  },[router.isReady]);
-  const category = router.query;
-
   const [ scrollY, setScrollY ] = useState(0);
 
   useEffect(() => {
@@ -27,7 +19,7 @@ const Header = () => {
     };
   });
 
-  return (
+   return (
     <header className='w-full flex flex-col bg-white'>
       <div className='border-b border-b-black border-opacity-30 relative py-4 pl-20 pb-4'>
         <Link href='/'>
@@ -42,36 +34,38 @@ const Header = () => {
             </Link>
             <Nav>
               <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
-              <NavItem link='/posts/[category]' linkAs={`/posts/${category}`}>KEYBOARDS 101</NavItem>
-              <NavItem link='/posts/[category]' linkAs={`/posts/${category}`}>STAB MODS</NavItem>
-              <NavItem link='/switches' linkAs='/'>SWITCHES</NavItem>
-              <NavItem link='/keycaps' linkAs='/'>KEYCAPS</NavItem>
-              <NavItem link='/build' linkAs='/'>BUILD</NavItem>
-              <NavItem link='/firmware' linkAs='/'>FIRMWARE</NavItem>
+              <NavItem link='/posts/[category]' linkAs='/posts/keebs'>KEYBOARDS 101</NavItem>
+              <NavItem link='/posts/[category]' linkAs='/posts/stabmods'>STAB MODS</NavItem>
+              <NavItem link='/posts/[category]' linkAs='/posts/switches'>SWITCHES</NavItem>
+              <NavItem link='/posts/[category]' linkAs='/posts/keycaps'>KEYCAPS</NavItem>
+              <NavItem link='/posts/[category]' linkAs='/posts/build'>BUILD</NavItem>
+              <NavItem link='/posts/[category]'  linkAs='/posts/firmware'>FIRMWARE</NavItem>
             </Nav>
           </div>
           <Nav>
-            <NavItem link='/' linkAs='/' isFirst>SEARCH</NavItem>
+            <NavItem link='/keyboardTest' linkAs='/keyboardtest' isFirst>KEYBOARD TEST</NavItem>
+            <NavItem link='/' linkAs='/'>SEARCH</NavItem>
           </Nav>
         </div>
       ) : (
         <div className='w-full flex justify-between px-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900'>
           <Nav>
             <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
-            <NavItem link='/posts/[category]' linkAs={`/posts/${category}`}>KEYBOARDS 101</NavItem>
-            <NavItem link='/' linkAs='/'>STAB MODS</NavItem>
-            <NavItem link='/' linkAs='/'>SWITCHES</NavItem>
-            <NavItem link='/' linkAs='/'>KEYCAPS</NavItem>
-            <NavItem link='/' linkAs='/'>BUILD</NavItem>
-            <NavItem link='/' linkAs='/'>FIRMWARE</NavItem>
+            <NavItem link='/posts/[category]' linkAs='/posts/keebs'>KEYBOARDS 101</NavItem>
+            <NavItem link='/posts/[category]' linkAs='/posts/stabmods'>STAB MODS</NavItem>
+            <NavItem link='/posts/[category]' linkAs='/posts/switches'>SWITCHES</NavItem>
+            <NavItem link='/posts/[category]' linkAs='/posts/keycaps'>KEYCAPS</NavItem>
+            <NavItem link='/posts/[category]' linkAs='/posts/build'>BUILD</NavItem>
+            <NavItem link='/posts/[category]' linkAs='/posts/firmware'>FIRMWARE</NavItem>
           </Nav>
           <Nav>
-            <NavItem link='/' linkAs='/' isFirst>SEARCH</NavItem>
+            <NavItem link='/keyboardTest' linkAs='/keyboardtest' isFirst>KEYBOARD TEST</NavItem>
+            <NavItem link='/' linkAs='/'>SEARCH</NavItem>
           </Nav>
         </div>
       )}
     </header>
-  )
+  );
 }
 
 export default Header;

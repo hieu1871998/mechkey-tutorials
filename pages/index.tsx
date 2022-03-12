@@ -32,7 +32,7 @@ const Home = ({
         <title>{siteTitle}</title>
       </Head>
       <section className='container max-w-full px-20 py-8'>
-        <Grid>
+        <Grid isHome>
           {allPostsData.map(({ id, category, imgSrc, title, author, date }) => (
             <GridItem
               key={id}
