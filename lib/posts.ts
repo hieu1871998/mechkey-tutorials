@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const postsDirectory = path.join(process.cwd(), 'posts');
 const keebsDirectory = path.join(process.cwd(), 'posts/keebs');
 const stabmodsDirectory = path.join(process.cwd(), 'posts/stabmods');
 const switchesDirectory = path.join(process.cwd(), 'posts/switches');
@@ -136,19 +135,19 @@ export const getAllPostIds = () => {
     categoryNames.push(keebsDirectory);
   });
   stabmodsFileNames.forEach(stabmodsFileName => {
-    categoryNames.push(keebsDirectory);
+    categoryNames.push(stabmodsDirectory);
   });
   switchesFileNames.forEach(switchesFileName => {
-    categoryNames.push(keebsDirectory);
+    categoryNames.push(switchesDirectory);
   });
   keycapsFileNames.forEach(keycapsFileName => {
-    categoryNames.push(keebsDirectory);
+    categoryNames.push(keycapsDirectory);
   });
   buildFileNames.forEach(buildFileName => {
-    categoryNames.push(keebsDirectory);
+    categoryNames.push(buildDirectory);
   });
   firmwareFileNames.forEach(firmwareFileName => {
-    categoryNames.push(keebsDirectory);
+    categoryNames.push(firmwareDirectory);
   });
 
   const fileNames = keebsFileNames.concat(stabmodsFileNames).concat(switchesFileNames).concat(keycapsFileNames).concat(buildFileNames).concat(firmwareFileNames);
