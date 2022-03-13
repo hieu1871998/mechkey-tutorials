@@ -27,7 +27,7 @@ const Header = () => {
         </Link>          
       </div>
       {scrollY > 80 ? (
-        <div className='w-full flex justify-between pr-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900 z-10 fixed shadow md:invisible'>
+        <div className='w-full flex justify-between pr-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900 z-10 fixed shadow'>
           <div className='flex flex-row'>
             <Link href='/'>
               <a className='w-20 py-2 text-3xl text-center font-raleway font-bold tracking-widest select-none'><span className='text-red-500 font-black'>M</span>T</a>            

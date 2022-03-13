@@ -15,15 +15,15 @@ const KeyboardTester = () => {
       }
 
       
-      document.getElementById(key)?.classList.add('bg-green-300', 'top-0.5');
-      document.getElementById(code)?.classList.add('bg-green-300', 'top-0.5');
+      document.getElementById(key)?.classList.add('bg-green-300', 'border-2');
+      document.getElementById(code)?.classList.add('bg-green-300', 'border-2');
       
     })
     document.body.addEventListener('keyup', (event: KeyboardEvent) => {
       let key: string = event.key;
       let code: string = event.code;
-      document.getElementById(key)?.classList.remove('top-0.5');
-      document.getElementById(code)?.classList.remove('top-0.5');
+      document.getElementById(key)?.classList.remove( 'border-2');
+      document.getElementById(code)?.classList.remove( 'border-2');
 
       event.preventDefault();
     })
@@ -49,7 +49,7 @@ const KeyboardTester = () => {
       </Head>
       <div id='keyboard' className='container m-auto flex justify-center content-center py-32'>
         <ul className='text-xs text-black font-leagueSpartan list-none capitalize relative p-2 border-4 border-black border-opacity-50 rounded-md'>
-          <li className={keyBase + keyBaseWidth} id=''></li>
+          {/* <li className={keyBase + keyBaseWidth} id=''></li>
           <li className={keyBase + keyBaseWidth} id='F1'>F1</li>
           <li className={keyBase + keyBaseWidth} id='F2'>F2</li>
           <li className={keyBase + keyBaseWidth} id='F3'>F3</li>
@@ -62,7 +62,7 @@ const KeyboardTester = () => {
           <li className={keyBase + keyBaseWidth} id='F10'>F10</li>
           <li className={keyBase + keyBaseWidth} id='F11'>F11</li>
           <li className={keyBase + keyBaseWidth} id='F12'>F12</li>
-          <li className={keyBase + keyTabDelete} id='Insert'>Insert</li>
+          <li className={keyBase + keyTabDelete} id='Insert'>Insert</li> */}
           <li className={keyBase + keyBaseWidth + keyFirst} id='Escape'>Esc</li>
           <li className={keyBase + keyBaseWidth} id='Digit1'>1</li>
           <li className={keyBase + keyBaseWidth} id='Digit2'>2</li>
