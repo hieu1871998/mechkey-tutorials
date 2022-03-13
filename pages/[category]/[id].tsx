@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Layout, { siteTitle } from '../../../components/layout';
-import { getAllPostIds, getPostData } from '../../../lib/posts';
-import Date from '../../../components/date';
+import Layout, { siteTitle } from '../../components/layout';
+import { getAllPostIds, getPostData } from '../../lib/posts';
+import Date from '../../components/date';
 import { useRouter } from 'next/router';
-import YoutubeEmbed from '../../../components/youtubeEmbed';
+import YoutubeEmbed from '../../components/youtubeEmbed';
 
 const Post = ({
   postData
@@ -27,6 +27,11 @@ const Post = ({
         <div className='container m-auto w-full h-80 flex justify-center content-center'>
           <Head>
             <title>{siteTitle}</title>
+            <meta charSet='UTF-8' />
+            <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+            <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
+            <meta property='og:type' content='article' />
+            <meta property='og:title' content={siteTitle} />
           </Head>
           <div className='w-80 h-80 text-center'>
             <span className='text-2xl text-black font-raleway'>Loading post</span>
@@ -36,10 +41,15 @@ const Post = ({
     )
   }
 
-  return (
+  if (postData) return (
     <Layout>
       <Head>
         <title>{postData.title} - {siteTitle}</title>
+        <meta charSet='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
+        <meta property='og:type' content='article' />
+        <meta property='og:title' content={postData.title} />
       </Head>
       <div className='container m-auto pt-4 2xl:px-40 xl:px-40 lg: px-8'>
         <div className='container p-4 border border-black border-opacity-10 shadow-md'>
@@ -75,7 +85,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params?.category as string, params?.id as string);
+  let postData = null;
+  try {
+    postData = await getPostData(params?.category as string, params?.id as string);
+  } catch (err) { };
+
   return {
     props: {
       postData,

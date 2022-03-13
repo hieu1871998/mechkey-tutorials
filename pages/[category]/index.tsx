@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../../../components/layout';
-import Grid from '../../../components/grid';
-import GridItem from '../../../components/gridItem';
-import { getAllPostIds, getSortedPostsData } from '../../../lib/posts';
+import Layout, { siteTitle } from '../../components/layout';
+import Grid from '../../components/grid';
+import GridItem from '../../components/gridItem';
+import { getAllPostIds, getSortedPostsData } from '../../lib/posts';
 import { useRouter } from 'next/router';
 import { GetStaticPaths } from 'next/types';
 

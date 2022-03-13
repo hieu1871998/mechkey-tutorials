@@ -34,12 +34,12 @@ const Header = () => {
             </Link>
             <Nav>
               <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
-              <NavItem link='/posts/[category]' linkAs='/posts/keebs'>KEYBOARDS 101</NavItem>
-              <NavItem link='/posts/[category]' linkAs='/posts/stabmods'>STAB MODS</NavItem>
-              <NavItem link='/posts/[category]' linkAs='/posts/switches'>SWITCHES</NavItem>
-              <NavItem link='/posts/[category]' linkAs='/posts/keycaps'>KEYCAPS</NavItem>
-              <NavItem link='/posts/[category]' linkAs='/posts/build'>BUILD</NavItem>
-              <NavItem link='/posts/[category]'  linkAs='/posts/firmware'>FIRMWARE</NavItem>
+              <NavItem link='/[category]' linkAs='/keebs'>KEYBOARDS 101</NavItem>
+              <NavItem link='/[category]' linkAs='/stabmods'>STAB MODS</NavItem>
+              <NavItem link='/[category]' linkAs='/switches'>SWITCHES</NavItem>
+              <NavItem link='/[category]' linkAs='/keycaps'>KEYCAPS</NavItem>
+              <NavItem link='/[category]' linkAs='/build'>BUILD</NavItem>
+              <NavItem link='/[category]'  linkAs='/firmware'>FIRMWARE</NavItem>
             </Nav>
           </div>
           <Nav>
@@ -51,12 +51,12 @@ const Header = () => {
         <div className='w-full flex justify-between px-20 bg-inherit font-sans tracking-widest text-sm font-thin text-neutral-900'>
           <Nav>
             <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
-            <NavItem link='/posts/[category]' linkAs='/posts/keebs'>KEYBOARDS 101</NavItem>
-            <NavItem link='/posts/[category]' linkAs='/posts/stabmods'>STAB MODS</NavItem>
-            <NavItem link='/posts/[category]' linkAs='/posts/switches'>SWITCHES</NavItem>
-            <NavItem link='/posts/[category]' linkAs='/posts/keycaps'>KEYCAPS</NavItem>
-            <NavItem link='/posts/[category]' linkAs='/posts/build'>BUILD</NavItem>
-            <NavItem link='/posts/[category]' linkAs='/posts/firmware'>FIRMWARE</NavItem>
+            <NavItem link='/[category]' linkAs='/keebs'>KEYBOARDS 101</NavItem>
+            <NavItem link='/[category]' linkAs='/stabmods'>STAB MODS</NavItem>
+            <NavItem link='/[category]' linkAs='/switches'>SWITCHES</NavItem>
+            <NavItem link='/[category]' linkAs='/keycaps'>KEYCAPS</NavItem>
+            <NavItem link='/[category]' linkAs='/build'>BUILD</NavItem>
+            <NavItem link='/[category]' linkAs='/firmware'>FIRMWARE</NavItem>
             <NavItem link='/keyboardTest' linkAs='/keyboardtest'>KEYBOARD TEST</NavItem>
           </Nav>
           <Nav>

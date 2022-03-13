@@ -46,7 +46,7 @@ const Layout = ({
         </div>
       )}
       </main>
-      <footer className='w-full mt-auto flex flex-col bg-white absolute bottom-0'>
+      <footer className='w-full flex flex-col bg-white absolute bottom-0'>
         <Link href='https://discord.gg/c3RHqNuSUY'>
           <a target='_blank' className='w-full bg-black p-3'>
             <h4 className='text-center text-xs text-white font-leagueSpartan tracking-wide'>JOIN US ON DISCORD: VIETNAM MECHANICAL KEYBOARD</h4>

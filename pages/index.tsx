@@ -31,7 +31,7 @@ const Home = ({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className='container max-w-full px-20 py-8'>
+      <section className='container max-w-full px-20 pt-8 pb-24'>
         <Grid isHome>
           {allPostsData.map(({ id, category, imgSrc, title, author, date }) => (
             <GridItem
@@ -40,8 +40,8 @@ const Home = ({
               title={title}
               author={author}
               date={date}
-              href='/posts/[category]/[id]'
-              hrefAs={`/posts/${category}/${id}`}
+              href='/[category]/[id]'
+              hrefAs={`${category}/${id}`}
             />           
           ))}
         </Grid>
