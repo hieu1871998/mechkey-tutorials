@@ -53,8 +53,8 @@ const CategoryIndex = ({
                   title={title}
                   author={author}
                   date={date}
-                  href='/posts/[category]/[id]'
-                  hrefAs={`/posts/${category}/${id}`}
+                  href='/[category]/[id]'
+                  hrefAs={`/${category}/${id}`}
                 />
               );
             }
