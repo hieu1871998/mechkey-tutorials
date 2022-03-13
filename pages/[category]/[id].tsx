@@ -41,7 +41,7 @@ const Post = ({
     )
   }
 
-  if (postData) return (
+  return (
     <Layout>
       <Head>
         <title>{postData.title} - {siteTitle}</title>

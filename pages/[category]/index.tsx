@@ -20,7 +20,7 @@ const CategoryIndex = ({
 }) => {
   const router = useRouter();
   const category = router.asPath;
-  const currentCategory = category.replace('/posts/', '')
+  const currentCategory = category.replace('/', '')
   
   if (router.isFallback) {
     return (

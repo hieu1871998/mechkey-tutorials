@@ -33,18 +33,18 @@ const Header = () => {
               <a className='w-20 py-2 text-3xl text-center font-raleway font-bold tracking-widest select-none'><span className='text-red-500 font-black'>M</span>T</a>            
             </Link>
             <Nav>
-              <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
-              <NavItem link='/[category]' linkAs='/keebs'>KEYBOARDS 101</NavItem>
-              <NavItem link='/[category]' linkAs='/stabmods'>STAB MODS</NavItem>
-              <NavItem link='/[category]' linkAs='/switches'>SWITCHES</NavItem>
-              <NavItem link='/[category]' linkAs='/keycaps'>KEYCAPS</NavItem>
-              <NavItem link='/[category]' linkAs='/build'>BUILD</NavItem>
-              <NavItem link='/[category]'  linkAs='/firmware'>FIRMWARE</NavItem>
+            <NavItem link='/' linkAs='/' isFirst>HOME</NavItem>
+            <NavItem link='/[category]' linkAs='/keebs'>KEYBOARDS 101</NavItem>
+            <NavItem link='/[category]' linkAs='/stabmods'>STAB MODS</NavItem>
+            <NavItem link='/[category]' linkAs='/switches'>SWITCHES</NavItem>
+            <NavItem link='/[category]' linkAs='/keycaps'>KEYCAPS</NavItem>
+            <NavItem link='/[category]' linkAs='/build'>BUILD</NavItem>
+            <NavItem link='/[category]' linkAs='/firmware'>FIRMWARE</NavItem>
+            <NavItem link='/keyboardTest' linkAs='/keyboardtest'>KEYBOARD TEST</NavItem>
             </Nav>
           </div>
           <Nav>
-            <NavItem link='/keyboardTest' linkAs='/keyboardtest' isFirst>KEYBOARD TEST</NavItem>
-            <NavItem link='/' linkAs='/'>SEARCH</NavItem>
+          <NavItem link='/' linkAs='/' isFirst>SEARCH</NavItem>
           </Nav>
         </div>
       ) : (
