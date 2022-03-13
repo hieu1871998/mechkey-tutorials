@@ -1,8 +1,8 @@
 ---
-title: 'Akko CS: switch stock tốt nhất'
-date: '2021-09-15'
-author: 'Hoàng Vương'
-imgSrc: 'images/switches/akko/PXL_20210512_231439741.NIGHT.jpg'
+title: 'Dummy Post'
+date: '2020-09-15'
+author: 'Dummy'
+imgSrc: 'images/banners/banner1.jpg'
 ---
 
 Lời mở đầu
