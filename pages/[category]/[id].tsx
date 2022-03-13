@@ -27,52 +27,51 @@ const Post = ({
         <div className='container m-auto w-full h-80 flex justify-center content-center'>
           <Head>
             <title>{siteTitle}</title>
-            <meta charSet='UTF-8' />
-            <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-            <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
-            <meta property='og:type' content='article' />
-            <meta property='og:title' content={siteTitle} />
           </Head>
-          <div className='w-80 h-80 text-center'>
-            <span className='text-2xl text-black font-raleway'>Loading post</span>
+          <div className='container m-auto pt-4 2xl:px-40 xl:px-40 lg: px-8'>
+            <div className='container p-4 border border-black border-opacity-10 shadow-md text-center'> 
+              <span className='text-xl text-black font-raleway'>Loading post ...</span>       
+            </div>
           </div>
         </div>
       </Layout>
     )
-  } else {
-    return (
-      <Layout>
-        <Head>
-          <title>{postData.title} - {siteTitle}</title>
-          <meta charSet='UTF-8' />
-          <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-          <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
-          <meta property='og:type' content='article' />
-          <meta property='og:title' content={postData.title} />
-        </Head>
-        <div className='container m-auto pt-4 2xl:px-40 xl:px-40 lg: px-8'>
-          <div className='container p-4 border border-black border-opacity-10 shadow-md'>
-            <div className='m-4 pb-4 border-b border-black border-opacity-25'>
-              <h1 className='text-left text-4xl font-raleway font-bold'>{postData.title}</h1>
-              <div className='flex flex-row justify-between text-lg text-gray-500 font-leagueSpartan'>
-                <span className=''>Author: {postData.author}</span>
-                <span className=''><Date dateString={postData.date} /></span>
-              </div>  
-            </div>        
-            <div
-             className='p-4 text-justify text-lg font-sans leading-8'
-             dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-            />
-            {(postData.videoId != '' && postData.videoId != null && postData.videoId != undefined) && 
-              <div className='w-full aspect-w-16 aspect-h-9'>
-                <YoutubeEmbed videoId={postData.videoId} />
-              </div>
-            }          
+  }
+
+  if (!postData) return null;
+
+  return (
+    <Layout>
+      <Head>
+        <title>{postData?.title} - {siteTitle}</title>
+        <meta charSet='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
+        <meta property='og:type' content='article' />
+        <meta property='og:title' content={postData?.title} />
+      </Head>
+      <div className='container m-auto pt-4 2xl:px-40 xl:px-40 lg: px-8'>
+        <div className='container p-4 border border-black border-opacity-10 shadow-md'>
+          <div className='m-4 pb-4 border-b border-black border-opacity-25'>
+            <h1 className='text-left text-4xl font-raleway font-bold'>{postData?.title}</h1>
+            <div className='flex flex-row justify-between text-lg text-gray-500 font-leagueSpartan'>
+              <span className=''>Author: {postData?.author}</span>
+              <span className=''><Date dateString={postData?.date} /></span>
+            </div>  
           </div>        
-        </div>
-      </Layout>
-    )
-  }  
+          <div
+            className='p-4 text-justify text-lg font-sans leading-8'
+            dangerouslySetInnerHTML={{ __html: postData?.contentHtml }}
+          />
+          {(postData?.videoId != '' && postData?.videoId != null && postData?.videoId != undefined) && 
+            <div className='w-full aspect-w-16 aspect-h-9'>
+              <YoutubeEmbed videoId={postData?.videoId} />
+            </div>
+          }          
+        </div>        
+      </div>
+    </Layout>
+  ) 
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
