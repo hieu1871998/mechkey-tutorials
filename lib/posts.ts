@@ -173,7 +173,7 @@ export const getAllPostIds = () => {
 }
 
 export const getPostData = async (category: string, id: string) => {
-  const fullPath = path.join(postsDirectory, `${category}`, `${id}`);
+  const fullPath = path.join(postsDirectory, `${category}`, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf-8');
 
   const matterResult = matter(fileContents);
