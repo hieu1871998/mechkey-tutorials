@@ -67,6 +67,7 @@ const Post = ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
+  
   return {
     paths,
     fallback: true,

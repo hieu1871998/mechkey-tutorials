@@ -5,25 +5,6 @@ import GridItem from '../../../components/gridItem';
 import { getAllPostIds, getSortedPostsData } from '../../../lib/posts';
 import { useRouter } from 'next/router';
 import { GetStaticPaths } from 'next/types';
-import Link from 'next/link';
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: true,
-  };
-}
-
-export const getStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
-
-  return {
-    props: {
-      allPostsData
-    }
-  }
-}
 
 const CategoryIndex = ({
   allPostsData
@@ -41,6 +22,21 @@ const CategoryIndex = ({
   const category = router.asPath;
   const currentCategory = category.replace('/posts/', '')
   
+  if (router.isFallback) {
+    return (
+      <Layout>
+        <div className='container m-auto w-full h-80 flex justify-center content-center'>
+          <Head>
+            <title>{siteTitle}</title>
+          </Head>
+          <div className='w-80 h-80 text-center'>
+            <span className='text-2xl text-black font-raleway'>Loading posts</span>
+          </div>
+        </div>
+      </Layout>
+    )
+  }
+
   return (
     <Layout>
       <Head>
@@ -68,5 +64,25 @@ const CategoryIndex = ({
     </Layout>
   )
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = getAllPostIds();
+
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
+export const getStaticProps = async () => {
+  const allPostsData = getSortedPostsData();
+
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
+
 
 export default CategoryIndex;
