@@ -20,8 +20,6 @@ const buildCategory = 'build';
 const firmwareCategory = 'firmware';
 
 export const getSortedPostsData = () => {
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory)
   const keebsFileNames = fs.readdirSync(keebsDirectory);
   const stabmodsFileNames = fs.readdirSync(stabmodsDirectory);
   const switchesFileNames = fs.readdirSync(switchesDirectory);
