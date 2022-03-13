@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
+const postsDirectory = path.join(process.cwd(), 'posts')
 const keebsDirectory = path.join(process.cwd(), 'posts/keebs');
 const stabmodsDirectory = path.join(process.cwd(), 'posts/stabmods');
 const switchesDirectory = path.join(process.cwd(), 'posts/switches');
@@ -170,7 +171,7 @@ export const getAllPostIds = () => {
 }
 
 export const getPostData = async (category: string, id: string) => {
-  const fullPath = path.join(`${category}`, `${id}.md`);
+  const fullPath = path.join(postsDirectory,`${category}`, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf-8');
 
   const matterResult = matter(fileContents);
