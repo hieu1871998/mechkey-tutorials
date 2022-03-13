@@ -27,7 +27,7 @@ const Layout = ({
   })
 
   return (
-    <div className='max-w-full container'>
+    <div className='container flex flex-col max-w-full h-full min-h-screen relative'>
       <Head>
         <link rel='icon' href='favicon.ico' />
         <meta name='description' content='Faerie'/>
@@ -46,7 +46,7 @@ const Layout = ({
         </div>
       )}
       </main>
-      <footer className='w-full mt-8 flex flex-col bg-white'>
+      <footer className='w-full mt-auto flex flex-col bg-white absolute bottom-0'>
         <Link href='https://discord.gg/c3RHqNuSUY'>
           <a target='_blank' className='w-full bg-black p-3'>
             <h4 className='text-center text-xs text-white font-leagueSpartan tracking-wide'>JOIN US ON DISCORD: VIETNAM MECHANICAL KEYBOARD</h4>
