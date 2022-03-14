@@ -53,7 +53,7 @@ const GridItem = ({
               <h4 className='px-4 w-full text-2xl text-black text-ellipsis font-leagueSpartan font-normal tracking-wide line-clamp-1 overflow-hidden'>{title}</h4>
               <p className='px-4 w-full text-base text-gray-800 text-ellipsis font-leagueSpartan font-normal tracking-wide line-clamp-1 overflow-hidden'>{toTitleCase(category)}</p>
             </div>            
-            <div className='flex flex-row justify-between mx-4 border-t border-white border-opacity-50'>
+            <div className='flex flex-row justify-between mx-4 border-t border-black border-opacity-30'>
               <p className='w-full text-left text-base text-black font-leagueSpartan font-normal tracking-widest leading-loose'>{author}</p>
               
               <p className='w-full text-right text-base text-black font-leagueSpartan font-normal tracking-widest leading-loose'><Date dateString={date} /></p>

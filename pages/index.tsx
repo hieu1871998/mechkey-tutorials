@@ -3,6 +3,7 @@ import Layout, { siteTitle } from '../components/layout';
 import Grid from '../components/grid';
 import GridItem from '../components/gridItem';
 import { getSortedPostsData } from '../lib/posts';
+import { GetStaticProps } from 'next';
 
 const Home = ({
   allPostsData
@@ -21,7 +22,7 @@ const Home = ({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className='container max-w-full px-20 pt-8 pb-24'>
+      <section className='container max-w-full xl:px-20 lg:px-20 md:px-14 sm:px-4 pt-8 pb-24'>
         <Grid isHome>
           {allPostsData.map(({ id, category, imgSrc, title, author, date }) => (
             <GridItem
@@ -41,7 +42,7 @@ const Home = ({
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
 
   return {

@@ -2,7 +2,6 @@ import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Header from './header';
 import Link from 'next/link';
-
 export const siteTitle: string = 'MECHKEY TUTORIALS';
 
 const Layout = ({
@@ -24,7 +23,7 @@ const Layout = ({
     return () => {
       window.removeEventListener('scroll', handleScroll);
     }
-  })
+  }, [])
 
   return (
     <div className='container flex flex-col max-w-full h-full min-h-screen relative'>
@@ -53,7 +52,7 @@ const Layout = ({
           </a>
         </Link>        
       </footer>
-    </div>
+    </div>   
   );
 }
 

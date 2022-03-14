@@ -4,7 +4,7 @@ import Grid from '../../components/grid';
 import GridItem from '../../components/gridItem';
 import { getAllPostIds, getSortedPostsData } from '../../lib/posts';
 import { useRouter } from 'next/router';
-import { GetStaticPaths } from 'next/types';
+import { GetStaticPaths, GetStaticProps } from 'next/types';
 
 const CategoryIndex = ({
   allPostsData
@@ -77,7 +77,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
 
   return {

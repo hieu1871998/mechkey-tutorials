@@ -11,7 +11,14 @@ const nextConfig = {
       's3-us-west-2.amazonaws.com',
       'matrixzj.github.io'
     ]
-  }
+  },
+  // webpack: (config, { isServer }) => {
+  //   if (isServer) {
+  //     require('./scripts/cache');
+  //   }
+
+  //   return config;
+  // }
 }
 
 module.exports = nextConfig

@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import YoutubeEmbed from '../../components/youtubeEmbed';
 import ReactMarkDown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 
 const Post = ({
   postData
@@ -26,15 +27,11 @@ const Post = ({
   if (router.isFallback) {
     return (
       <Layout>
-        <div className='container m-auto w-full h-80 flex justify-center content-center'>
-          <Head>
-            <title>{siteTitle}</title>
-          </Head>
-          <div className='container m-auto pt-4 2xl:px-40 xl:px-40 lg: px-8'>
-            <div className='container p-4 border border-black border-opacity-10 shadow-md text-center'> 
-              <span className='text-xl text-black font-raleway'>Loading post ...</span>       
-            </div>
-          </div>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
+        <div className='container min-h-full h-full flex justify-center'>
+          <Spinner size={SpinnerSize.large} label='Loading' />
         </div>
       </Layout>
     )

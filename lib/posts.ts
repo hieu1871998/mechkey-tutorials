@@ -184,8 +184,6 @@ export const getPostData = async (category: string, id: string) => {
     .process(matterResult.content)
   const contentHtml = matterResult.content;
 
-  console.log(contentHtml);
-
   return {
     id,
     contentHtml,
