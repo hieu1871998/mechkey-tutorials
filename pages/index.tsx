@@ -33,7 +33,7 @@ const Home = ({
               date={date}
               category={category}
               href='/[category]/[id]'
-              hrefAs={`${category}/${id}`}
+              hrefAs={`/${category}/${id}`}
             />           
           ))}
         </Grid>

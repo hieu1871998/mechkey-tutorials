@@ -1,10 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
-import remarkPresetLintMarkdownStyleGuide from 'remark-preset-lint-markdown-style-guide';
-import remarkHtml from 'remark-html';
+const fs = require('fs')
+const path = require('path')
+const matter = require('gray-matter')
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 const keebsDirectory = path.join(process.cwd(), 'posts/keebs');
@@ -21,7 +17,7 @@ const keycapsCategory = 'keycaps';
 const buildCategory = 'build';
 const firmwareCategory = 'firmware';
 
-export const getSortedPostsData = () => {
+const postData = () => {
   const keebsFileNames = fs.readdirSync(keebsDirectory);
   const stabmodsFileNames = fs.readdirSync(stabmodsDirectory);
   const switchesFileNames = fs.readdirSync(switchesDirectory);
@@ -39,7 +35,7 @@ export const getSortedPostsData = () => {
     return {
       id,
       category,
-      ...(matterResult.data as { date: string, title: string, author: string, imgSrc: string })
+      ...(matterResult.data)
     }
   })
 
@@ -53,7 +49,7 @@ export const getSortedPostsData = () => {
     return {
       id,
       category,
-      ...(matterResult.data as { date: string, title: string, author: string, imgSrc: string })
+      ...(matterResult.data)
     }
   })
 
@@ -67,7 +63,7 @@ export const getSortedPostsData = () => {
     return {
       id,
       category,
-      ...(matterResult.data as { date: string, title: string, author: string, imgSrc: string })
+      ...(matterResult.data)
     }
   })
 
@@ -81,7 +77,7 @@ export const getSortedPostsData = () => {
     return {
       id,
       category,
-      ...(matterResult.data as { date: string, title: string, author: string, imgSrc: string })
+      ...(matterResult.data)
     }
   })
 
@@ -95,7 +91,7 @@ export const getSortedPostsData = () => {
     return {
       id,
       category,
-      ...(matterResult.data as { date: string, title: string, author: string, imgSrc: string })
+      ...(matterResult.data)
     }
   })
 
@@ -109,84 +105,22 @@ export const getSortedPostsData = () => {
     return {
       id,
       category,
-      ...(matterResult.data as { date: string, title: string, author: string, imgSrc: string })
+      ...(matterResult.data)
     }
   })
 
   const allPostsData = keebsPostsData.concat(stabmodsPostsData).concat(switchesPostsData).concat(keycapsPostsData).concat(buildPostsData).concat(firmwarePostsData);
   
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
-  })
+  return `export const allPostsData = ${JSON.stringify(allPostsData)}`
 }
 
-export const getAllPostIds = () => {
-  const keebsFileNames = fs.readdirSync(keebsDirectory);
-  const stabmodsFileNames = fs.readdirSync(stabmodsDirectory);
-  const switchesFileNames = fs.readdirSync(switchesDirectory);
-  const keycapsFileNames = fs.readdirSync(keycapsDirectory);
-  const buildFileNames = fs.readdirSync(buildDirectory);
-  const firmwareFileNames = fs.readdirSync(firmwareDirectory);
-
-  let categoryNames:string[] = [];
-
-  keebsFileNames.forEach(keebsFileName => {
-    categoryNames.push(keebsDirectory);
-  });
-  stabmodsFileNames.forEach(stabmodsFileName => {
-    categoryNames.push(stabmodsDirectory);
-  });
-  switchesFileNames.forEach(switchesFileName => {
-    categoryNames.push(switchesDirectory);
-  });
-  keycapsFileNames.forEach(keycapsFileName => {
-    categoryNames.push(keycapsDirectory);
-  });
-  buildFileNames.forEach(buildFileName => {
-    categoryNames.push(buildDirectory);
-  });
-  firmwareFileNames.forEach(firmwareFileName => {
-    categoryNames.push(firmwareDirectory);
-  });
-
-  const fileNames = keebsFileNames.concat(stabmodsFileNames).concat(switchesFileNames).concat(keycapsFileNames).concat(buildFileNames).concat(firmwareFileNames);
-
-  const postParams = categoryNames.map((e, i) => {
-    return {
-      categoryName: e,
-      id: fileNames[i]
-    }
-  });
-
-  return postParams.map(postParam => {
-    return {
-      params: {
-        category: postParam.categoryName,
-        id: postParam.id
-      }
-    }
-  });
+try {
+  fs.readdirSync('cache')
+} catch (e) {
+  fs.mkdirSync('cache')
 }
 
-export const getPostData = async (category: string, id: string) => {
-  const fullPath = path.join(postsDirectory,`${category}`, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf-8');
-
-  const matterResult = matter(fileContents);
-
-  const processedContent = await remark()
-    .use(remarkPresetLintMarkdownStyleGuide)
-    .use(remarkHtml)
-    .process(matterResult.content)
-  const contentHtml = matterResult.content;
-
-  return {
-    id,
-    contentHtml,
-    ...(matterResult.data as { title: string, date: string, author: string, imgSrg: string, videoId: string})
-  }
-}
+fs.writeFile('cache/data.js', postData(), (err) => {
+  if (err) return console.log(err);
+  console.log('Posts cached');
+})

@@ -12,13 +12,31 @@ const nextConfig = {
       'matrixzj.github.io'
     ]
   },
-  // webpack: (config, { isServer }) => {
-  //   if (isServer) {
-  //     require('./scripts/cache');
-  //   }
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./scripts/cache.js')
+    }
 
-  //   return config;
-  // }
+    return config
+  },
+  resolve: {
+    extensions: [".svg"],
+  },
+  module: {
+      rules: [
+          {
+              test: /\.svg$/,
+              use: [
+                  {
+                      loader: "svg-inline-loader",
+                      options: {
+                          removeSVGTagAttrs: false,
+                      },
+                  },
+              ],
+          }
+      ]
+  }
 }
 
 module.exports = nextConfig
