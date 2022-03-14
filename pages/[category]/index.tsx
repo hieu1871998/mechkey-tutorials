@@ -37,22 +37,25 @@ const CategoryIndex = ({
     )
   }
 
+  if (!allPostsData) return null;
+
   return (
     <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className='container max-w-full px-20 py-8'>
+      <section className='container max-w-full px-20 py-8 mb-20'>
         <Grid isHome>
-          {allPostsData.map(({ id, category, imgSrc, title, author, date }) => {
+          {allPostsData?.map(({ id, category, imgSrc, title, author, date }) => {
             if (currentCategory === category) {
               return (
                 <GridItem
                   key={id}
-                  imageSrc={'/' + imgSrc}
+                  imageSrc={imgSrc}
                   title={title}
                   author={author}
                   date={date}
+                  category={category}
                   href='/[category]/[id]'
                   hrefAs={`/${category}/${id}`}
                 />

@@ -4,16 +4,6 @@ import Grid from '../components/grid';
 import GridItem from '../components/gridItem';
 import { getSortedPostsData } from '../lib/posts';
 
-export const getStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
-
-  return {
-    props: {
-      allPostsData
-    }
-  }
-}
-
 const Home = ({
   allPostsData
 }: {
@@ -36,10 +26,11 @@ const Home = ({
           {allPostsData.map(({ id, category, imgSrc, title, author, date }) => (
             <GridItem
               key={id}
-              imageSrc={'/' + imgSrc}
+              imageSrc={imgSrc}
               title={title}
               author={author}
               date={date}
+              category={category}
               href='/[category]/[id]'
               hrefAs={`${category}/${id}`}
             />           
@@ -48,6 +39,16 @@ const Home = ({
       </section>
     </Layout>
   );
+}
+
+export const getStaticProps = async () => {
+  const allPostsData = getSortedPostsData();
+
+  return {
+    props: {
+      allPostsData
+    }
+  }
 }
 
 export default Home;

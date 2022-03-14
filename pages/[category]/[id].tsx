@@ -5,6 +5,8 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date';
 import { useRouter } from 'next/router';
 import YoutubeEmbed from '../../components/youtubeEmbed';
+import ReactMarkDown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const Post = ({
   postData
@@ -50,7 +52,7 @@ const Post = ({
         <meta property='og:type' content='article' />
         <meta property='og:title' content={postData?.title} />
       </Head>
-      <div className='container m-auto pt-4 2xl:px-40 xl:px-40 lg: px-8'>
+      <div className='container m-auto mb-20 pt-4 2xl:px-40 xl:px-40 lg: px-8'>
         <div className='container p-4 border border-black border-opacity-10 shadow-md'>
           <div className='m-4 pb-4 border-b border-black border-opacity-25'>
             <h1 className='text-left text-4xl font-raleway font-bold'>{postData?.title}</h1>
@@ -59,10 +61,9 @@ const Post = ({
               <span className=''><Date dateString={postData?.date} /></span>
             </div>  
           </div>        
-          <div
-            className='p-4 text-justify text-lg font-sans leading-8'
-            dangerouslySetInnerHTML={{ __html: postData?.contentHtml }}
-          />
+          <article className='p-4 m-auto prose lg:prose-xl max-w-none prose-gray font-leagueSpartan text-justify'>
+            <ReactMarkDown remarkPlugins={[remarkGfm]}>{postData?.contentHtml}</ReactMarkDown>
+          </article>
           {(postData?.videoId != '' && postData?.videoId != null && postData?.videoId != undefined) && 
             <div className='w-full aspect-w-16 aspect-h-9'>
               <YoutubeEmbed videoId={postData?.videoId} />

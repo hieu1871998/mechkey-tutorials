@@ -3,6 +3,8 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import remarkPresetLintMarkdownStyleGuide from 'remark-preset-lint-markdown-style-guide';
+import remarkHtml from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 const keebsDirectory = path.join(process.cwd(), 'posts/keebs');
@@ -177,9 +179,12 @@ export const getPostData = async (category: string, id: string) => {
   const matterResult = matter(fileContents);
 
   const processedContent = await remark()
-    .use(html)
+    .use(remarkPresetLintMarkdownStyleGuide)
+    .use(remarkHtml)
     .process(matterResult.content)
-  const contentHtml = processedContent.toString();
+  const contentHtml = matterResult.content;
+
+  console.log(contentHtml);
 
   return {
     id,

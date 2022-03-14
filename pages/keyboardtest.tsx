@@ -8,9 +8,7 @@ const KeyboardTester = () => {
     document.body.addEventListener('keydown', (event: KeyboardEvent) => {
       let key: string = event.key;
       let code: string = event.code;
-      console.log(key);
-
-      if ((key == document.getElementById(key)?.id && event.target == document.body) || (code == document.getElementById(key)?.id && event.target == document.body) || key == 'AltLeft' || key == 'AltRight') {
+      if (key != 'Meta' || code != 'MetaLeft') {
         event.preventDefault();
       }
 
@@ -23,8 +21,6 @@ const KeyboardTester = () => {
       document.getElementById(code)?.classList.remove('border-t-4');
       if (keyOutput) keyOutput.innerHTML = '<span>Key: </span>' + key;
       if (codeOutput) codeOutput.innerHTML = '<span>Code: </span>' + code;
-
-      event.preventDefault();
     })
     document.body.addEventListener('keyup', (event: KeyboardEvent) => {
       let key: string = event.key;
