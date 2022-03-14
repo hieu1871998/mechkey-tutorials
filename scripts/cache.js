@@ -122,5 +122,5 @@ try {
 
 fs.writeFile('cache/data.js', postData(), (err) => {
   if (err) return console.log(err);
-  console.log('Posts cached');
+  console.log('\x1b[32m%s\x1b[0m%s', 'cache.js', ' - posts cached');
 })

@@ -3,21 +3,19 @@ import Link from "next/link";
 const NavItem = ({
   link,
   linkAs,
-  children,
-  isFirst
+  children
 } : {
   link: string,
   linkAs: string,
-  children: React.ReactNode,
-  isFirst?: boolean
+  children: React.ReactNode
 }) => {
-  let classStr: string = '';
-  isFirst ? classStr = '' : classStr = 'py-1 ml-12'
     
   return (
     <Link href={link} as={linkAs}>
-        <a className={classStr}>
-          <span className='text-base lg:text-sm md:text-xs sm:text-xs font-leagueSpartan font-thin hover:border-b hover:border-b-black hover:border-opacity-30 transition-all duration-300 py-1 tracking-widest'>{children}</span>
+        <a>
+          <div className='float-left w-24 py-4 xl:text-sm lg:text-sm md:text-xs sm:text-xs text-xs text-center font-leagueSpartan tracking-widest transition-all duration-300 hover:bg-gray-300'>
+            <span>{children}</span>
+          </div>
         </a>
     </Link>
   )

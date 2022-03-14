@@ -2,7 +2,7 @@ import React from 'react';
 
 const Nav = ({children}: {children: React.ReactNode}) => {
   return (
-    <nav className='py-4'>
+    <nav className='w-full h-auto'>
       {children}
     </nav>
   )
