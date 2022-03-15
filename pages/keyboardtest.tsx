@@ -51,7 +51,7 @@ const KeyboardTester = () => {
       <Head>
         <title>Keyboard Tester - MECHKEY TUTORIALS</title>
       </Head>
-      <div id='keyboard' className='container m-auto flex flex-col justify-center align-middle py-32'>
+      <div id='keyboard' className='container w-screen m-auto flex flex-col justify-center align-middle py-32'>
         <div className='w-full m-auto flex flex-row justify-evenly text-lg text-black font-leagueSpartan'>
           <div id='currentKeyPress'>Key: </div>
           <div id='currentCodePress'>Code :</div>
