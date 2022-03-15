@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import * as React from 'react';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { Stylesheet, resetIds } from '@fluentui/react';
