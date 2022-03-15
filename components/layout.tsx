@@ -2,7 +2,14 @@ import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Header from './header';
 import Link from 'next/link';
+import { mergeStyles } from '@fluentui/react/lib/Styling';
 export const siteTitle: string = 'MECHKEY TUTORIALS';
+export const iconClass: string = mergeStyles({
+  fontSize: 20,
+  height: 20,
+  width: 20,
+  margin: 'auto'
+})
 
 const Layout = ({
   children
@@ -36,7 +43,7 @@ const Layout = ({
       <Header />
       <main>
       {scrollY > 80 ? (
-        <div className='mt-20'>
+        <div className='mt-18'>
           {children}
         </div>
       ) : (

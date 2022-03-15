@@ -7,7 +7,10 @@ import { useRouter } from 'next/router';
 import YoutubeEmbed from '../../components/youtubeEmbed';
 import ReactMarkDown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
+import {
+  Spinner,
+  SpinnerSize
+} from '@fluentui/react/lib/Spinner';
 
 const Post = ({
   postData
@@ -30,8 +33,8 @@ const Post = ({
         <Head>
           <title>{siteTitle}</title>
         </Head>
-        <div className='container min-h-full h-full flex justify-center'>
-          <Spinner size={SpinnerSize.large} label='Loading' />
+        <div className='container min-h-screen h-full flex flex-col justify-center align-middle'>
+          <Spinner size={SpinnerSize.large} label='Loading'/>
         </div>
       </Layout>
     )

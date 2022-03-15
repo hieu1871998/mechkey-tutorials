@@ -7,7 +7,7 @@ const Grid = ({
 }) => {
   let classStr: string = '';
   isHome ?
-    classStr = 'grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-12'
+    classStr = 'grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-12'
       :
     classStr = 'grid grid-cols-1 gap-12'
   return (

@@ -44,7 +44,7 @@ const CategoryIndex = ({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className='container max-w-full px-20 py-8 mb-20'>
+      <section className='container max-w-full xl:px-20 lg:px-20 md:px-14 sm:px-4 pt-8 pb-24'>
         <Grid isHome>
           {allPostsData?.map(({ id, category, imgSrc, title, author, date }) => {
             if (currentCategory === category) {

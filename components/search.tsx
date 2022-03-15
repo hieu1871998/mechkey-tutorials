@@ -1,12 +1,15 @@
 import { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
+import { Icon } from '@fluentui/react';
+import { iconClass } from './layout';
 
 const Search = () => {
   const searchRef = useRef<HTMLDivElement>(null);
+  const searchButtonRef = useRef<HTMLButtonElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
-  const [hidden, setHidden] = useState(true);
 
   const searchEndpoint = (query: string) => `/api/search?q=${query}`;
 
@@ -37,32 +40,33 @@ const Search = () => {
   }, []);
 
   const showSearchBox = () => {
-    setHidden(false);
-    document.getElementById('searchButton')?.classList.add('hidden');
-    document.getElementById('searchInput')?.focus();
+    searchRef.current?.classList.add('border-b');
+    searchInputRef.current?.classList.remove('hidden');
+    searchInputRef.current?.focus();
   }
   const hideSearchBox = () => {
-    setHidden(true);
-    document.getElementById('searchButton')?.classList.remove('hidden');
+    if (!query) {
+      searchInputRef.current?.classList.add('hidden');
+      searchRef.current?.classList.remove('border-b');
+    }    
   }
-
-  let isHidden = '';
-  if (hidden) {
-    isHidden = ' hidden';
-  } else isHidden = '';
 
   return (
     <div
-      className='w-80 h-min my-auto relative'
+      className='w-max h-min my-auto flex flex-row border-black border-opacity-30 relative'
       ref={searchRef}
     >
-      <button id='searchButton' className='text-sm text-black font-leagueSpartan float-right' onClick={showSearchBox}>
-        <span>SEARCH</span>
+      <button
+        ref={searchButtonRef}
+        className='flex align-middle p-2 hover:bg-black hover:bg-opacity-10 active:bg-black active:bg-opacity-30 transition-all duration-300'
+        onClick={showSearchBox}
+      >
+        <Icon iconName='Search' className={iconClass} />
       </button>
       <input
-        id='searchInput'
+        ref={searchInputRef}
         type='text'
-        className={'w-full p-2 bg-black bg-opacity-5 text-sm text-black font-leagueSpartan h-min border border-black border-opacity-30 focus:ring-0 focus:border focus:border-black focus:border-opacity-30 focus:bg-white' + isHidden}
+        className='w-60 h-min p-2 bg-white text-sm text-black font-sans border-0 border-black border-opacity-30 focus:ring-0 focus:border-0 focus:border-black focus:border-opacity-50 relative hidden'
         onChange={onChange}
         onFocus={onFocus}
         onBlur={hideSearchBox}
@@ -70,21 +74,20 @@ const Search = () => {
         value={query}
       />
       {active && results.length > 0 && (
-        <ul className='z-10 absolute w-full bg-white bg-opacity-80 backdrop-blur-xl shadow-md shadow-gray-500 text-sm text-black font-leagueSpartan'>
-          {results.map(({id, title, category, author}) => (
-            <Link href='/[category]/[id]' as={`/${category}/${id}`} key={id}>
-              <a>
-                <li className='w-full p-2 transition-all duration-300 hover:bg-black hover:bg-opacity-10'>
-                  <span className='line-clamp-1'>{title}</span>
-                  <div className='flex flex-row justify-between text-gray-500'>
-                    <span>{author}</span><span>{category}</span>
-                  </div>                  
-                </li>
-              </a>
-            </Link>
-            
-          ))}
-        </ul>
+      <ul className='z-10 absolute w-full max-h-72 mt-10 bg-white backdrop-blur-xl shadow-md shadow-gray-500 text-sm text-black font-leagueSpartan overflow-auto'>
+        {results.map(({id, title, category, author}) => (
+          <Link href='/[category]/[id]' as={`/${category}/${id}`} key={id}>
+            <a>
+              <li className='w-full p-2 transition-all duration-300 hover:bg-black hover:bg-opacity-10'>
+                <span className='line-clamp-1'>{title}</span>
+                <div className='flex flex-row justify-between text-gray-500'>
+                  <span>{author}</span><span>{category}</span>
+                </div>                  
+              </li>
+            </a>
+          </Link>          
+        ))}
+      </ul>
       )}
     </div>
   )
