@@ -23,7 +23,7 @@ const Header = () => {
 
    return (
     <header className='w-full flex flex-col bg-white'>
-      <div className='xl:block lg:hidden md:hidden sm: hidden border-b border-b-black border-opacity-30 relative py-4 pl-20 pb-4'>
+      <div className='xl:block lg:hidden md:hidden sm:hidden border-b border-b-black border-opacity-30 relative py-4 pl-20 pb-4'>
         <Link href='/'>
           <a className='text-3xl p-1 font-raleway font-bold tracking-widest select-none border-2 border-black'><span className='text-red-500 font-black'>M</span>ECHKEY TUTORIALS</a>            
         </Link> 

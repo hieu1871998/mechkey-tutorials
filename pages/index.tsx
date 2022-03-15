@@ -22,7 +22,7 @@ const Home = ({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className='container max-w-full xl:px-20 lg:px-20 md:px-14 sm:px-4 pt-8 pb-24'>
+      <section className='container max-w-full max-h-screen xl:px-20 lg:px-20 md:px-14 sm:px-4 pt-8 pb-24 overflow-auto'>
         <Grid isHome>
           {allPostsData.map(({ id, category, imgSrc, title, author, date }) => (
             <GridItem

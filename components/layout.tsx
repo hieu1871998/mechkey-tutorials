@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './header';
 import Link from 'next/link';
 import { mergeStyles } from '@fluentui/react/lib/Styling';
+import HeaderVertical from './headerVertical';
 export const siteTitle: string = 'MECHKEY TUTORIALS';
 export const iconClass: string = mergeStyles({
   fontSize: 20,
@@ -33,14 +34,14 @@ const Layout = ({
   }, [])
 
   return (
-    <div className='container flex flex-col max-w-full h-full min-h-screen relative'>
+    <div className='container flex flex-row max-w-full h-max min-h-screen relative'>
       <Head>
         <link rel='icon' href='favicon.ico' />
         <meta name='description' content='Faerie'/>
         <meta name='og:title' content={siteTitle} />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
-      <Header />
+      <HeaderVertical />
       <main>
       {scrollY > 80 ? (
         <div className='mt-18'>
