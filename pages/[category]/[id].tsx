@@ -52,8 +52,8 @@ const Post = ({
         <meta property='og:type' content='article' />
         <meta property='og:title' content={postData?.title} />
       </Head>
-      <div className='container m-auto mb-20 pt-4 2xl:px-40 xl:px-40 lg: px-8'>
-        <div className='container p-4 border border-black border-opacity-10 shadow-md'>
+      <div className='container m-auto max-h-screen pt-4 2xl:px-40 xl:px-40 lg: px-8 overflow-auto'>
+        <div className='container p-4 mb-20 border border-black border-opacity-10 shadow-md'>
           <div className='m-4 pb-4 border-b border-black border-opacity-25'>
             <h1 className='text-left text-4xl font-raleway font-bold'>{postData?.title}</h1>
             <div className='flex flex-row justify-between text-lg text-gray-500 font-leagueSpartan'>
