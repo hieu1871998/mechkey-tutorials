@@ -20,10 +20,6 @@ const Header = () => {
     };
   });
 
-  const openMenu = () => {
-
-  }
-
    return (
     <header className='w-full flex flex-col bg-white'>
       <div className='border-b border-b-black border-opacity-30 relative py-4 pl-20 pb-4'>

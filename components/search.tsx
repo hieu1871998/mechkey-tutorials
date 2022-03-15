@@ -1,12 +1,12 @@
 import { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
-import { SearchBox } from '@fluentui/react';
 
 const Search = () => {
   const searchRef = useRef<HTMLDivElement>(null);
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
+  const [hidden, setHidden] = useState(true);
 
   const searchEndpoint = (query: string) => `/api/search?q=${query}`;
 
@@ -36,16 +36,36 @@ const Search = () => {
     }
   }, []);
 
+  const showSearchBox = () => {
+    setHidden(false);
+    document.getElementById('searchButton')?.classList.add('hidden');
+    document.getElementById('searchInput')?.focus();
+  }
+  const hideSearchBox = () => {
+    setHidden(true);
+    document.getElementById('searchButton')?.classList.remove('hidden');
+  }
+
+  let isHidden = '';
+  if (hidden) {
+    isHidden = ' hidden';
+  } else isHidden = '';
+
   return (
     <div
       className='w-80 h-min my-auto relative'
       ref={searchRef}
     >
+      <button id='searchButton' className='text-sm text-black font-leagueSpartan float-right' onClick={showSearchBox}>
+        <span>SEARCH</span>
+      </button>
       <input
+        id='searchInput'
         type='text'
-        className='w-full p-2 bg-black bg-opacity-5 text-sm text-black font-leagueSpartan h-min border border-black border-opacity-30 focus:ring-0 focus:border focus:border-black focus:border-opacity-30 focus:bg-white'
+        className={'w-full p-2 bg-black bg-opacity-5 text-sm text-black font-leagueSpartan h-min border border-black border-opacity-30 focus:ring-0 focus:border focus:border-black focus:border-opacity-30 focus:bg-white' + isHidden}
         onChange={onChange}
         onFocus={onFocus}
+        onBlur={hideSearchBox}
         placeholder='Search posts'
         value={query}
       />
